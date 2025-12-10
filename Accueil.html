@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopGen - Votre boutique par IA</title>
+    <title>ShopGen - Création par IA</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,21 +11,16 @@
 
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <svg width="140" height="42" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ShopGen logo">
-                    <rect rx="8" width="200" height="60" fill="#0B61FF" />
-                    <text x="20" y="38" font-family="Poppins, sans-serif" font-size="28" fill="white" font-weight="bold">ShopGen</text>
-                </svg>
+            <a href="Accueil.html" class="logo">
+                <span style="font-family:'Poppins'; font-weight:800; font-size:26px; color:#ffffff;">Shop<span style="color:var(--primary);">Gen</span></span>
             </a>
-            
             <div class="burger-menu" id="burger-menu">
                 <span></span><span></span><span></span>
             </div>
-
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="#">À propos</a></li> <li><a href="contact.html">Contact</a></li>
-                <li><button id="dark-toggle" class="btn-toggle">🌙</button></li>
+                <li><a href="Accueil.html" class="active">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -36,24 +31,22 @@
             <p>Dites-nous ce que vous vendez et ShopGen génère automatiquement une boutique complète, responsive et prête à être testée.</p>
             <div class="cta-group">
                 <a href="#" class="btn btn-primary">Générer ma boutique</a>
-                <a href="#" class="btn btn-secondary">Démo en 30s</a>
             </div>
         </div>
     </header>
 
     <section class="carousel-section">
         <div class="container">
-            <h2>Aperçu de la plateforme</h2>
+            <h2>Aperçu de la technologie</h2>
             <div class="carousel-container">
-                <div id="carousel-slide" class="carousel-slide">
-                    </div>
+                <div id="carousel-slide" class="carousel-slide"></div>
                 <div class="carousel-controls">
                     <button id="prevBtn" class="nav-btn">❮</button>
                     <button id="nextBtn" class="nav-btn">❯</button>
                 </div>
                 <div class="carousel-caption">
-                    <h3 id="slide-title">Titre</h3>
-                    <p id="slide-desc">Description</p>
+                    <h3 id="slide-title">Chargement...</h3>
+                    <p id="slide-desc">...</p>
                 </div>
             </div>
         </div>
@@ -65,18 +58,18 @@
             <div class="cards-grid">
                 <div class="card">
                     <div class="step-number">1</div>
-                    <h3>Décrivez votre projet</h3>
+                    <h3>Décrivez</h3>
                     <p>Indiquez le nom et le type de produit.</p>
                 </div>
                 <div class="card">
                     <div class="step-number">2</div>
-                    <h3>Personnalisez</h3>
-                    <p>Choisissez un style, ajoutez vos visuels.</p>
+                    <h3>Générez</h3>
+                    <p>L'IA conçoit le design et rédige le contenu.</p>
                 </div>
                 <div class="card">
                     <div class="step-number">3</div>
                     <h3>Publiez</h3>
-                    <p>Récupérez le lien de démo et partagez.</p>
+                    <p>Récupérez votre lien et commencez à vendre.</p>
                 </div>
             </div>
         </div>
@@ -84,11 +77,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="year"></span> ShopGen. Tous droits réservés.</p>
-            <div class="footer-links">
-                <a href="#">Mentions légales</a>
-                <a href="#">Politique de confidentialité</a>
-            </div>
+            <p>&copy; <span id="year"></span> ShopGen.</p>
         </div>
     </footer>
 
