@@ -46,7 +46,7 @@ Ce projet a été réalisé sans frameworks pour démontrer une maîtrise des fo
 * **Rôle :** Lead UI/Designer & Intégrateur (Page d'Accueil).
 * **Tâches réalisées :**
     * Conception de la charte graphique et du fichier CSS global (`style.css`).
-    * Structure et intégration HTML de la Page d'Accueil (`index.html`).
+    * Structure et intégration HTML de la Page d'Accueil (`Accuiel.html`).
     * Mise en place du Responsive Design (Media Queries) et de la structure du Footer.
 
 
