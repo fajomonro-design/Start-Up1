@@ -34,21 +34,20 @@ Les informations utilisateur (ex: pseudo).
 
 Ce projet a été réalisé sans frameworks pour démontrer une maîtrise des fondamentaux du développement web.
 
-Membre 1 : Romain Joeckle (Chef de Projet & Lead UI/UX)
-* Responsabilités : Coordination du projet, Identité visuelle, Structure HTML principale.
-* Tâches réalisées :
-    * Conception de l'architecture CSS globale (Variables, Reset, Typography).
-    * Développement de la Page d'Accueil (`index.html`) et intégration du contenu.
-    * Mise en place du Responsive Design global (Media Queries).
-    * Structure HTML/CSS du Carrousel et du Footer.
+**Chef de Projet : Louis**
+* **Rôle :** Coordination globale, Développement JavaScript (Logique), Gestion des données.
+* **Tâches réalisées :**
+    * Développement de l'intégralité du code JavaScript (`script.js`) : logique du carrousel, gestion du DOM.
+    * Création et développement des pages "Contact" et "À Propos".
+    * Implémentation de la validation de formulaire (Regex) et du LocalStorage.
+    * Gestion du dépôt GitHub et livraison finale sur Moodle.
 
-Membre 2 : Louis Monrose (Lead Developer JavaScript)
-* Responsabilités : Développement des scripts, Gestion des données, Pages secondaires.
-* Tâches réalisées :
-    * Développement de tout le code JavaScript (`script.js`) : logique du carrousel, écouteurs d'événements.
-    * Création et validation du Formulaire de Contact (`contact.html`) avec Regex.
-    * Mise en page de la section À Propos (`about.html`).
-    * Implémentation des fonctionnalités avancées : LocalStorage et Dark Mode.
+**Membre de l'équipe : Romain**
+* **Rôle :** Lead UI/Designer & Intégrateur (Page d'Accueil).
+* **Tâches réalisées :**
+    * Conception de la charte graphique et du fichier CSS global (`style.css`).
+    * Structure et intégration HTML de la Page d'Accueil (`index.html`).
+    * Mise en place du Responsive Design (Media Queries) et de la structure du Footer.
 
 
 
