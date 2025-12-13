@@ -1,51 +1,58 @@
-/* On définit les couleurs ici pour pouvoir les changer partout facilement */
+/* Style.css - ShopGen
+   C'est ici que je gère toutes les couleurs et la mise en page.
+*/
 
+/* --- MES VARIABLES --- */
+/* Je définis les couleurs ici pour pouvoir les modifier partout d'un coup */
 :root {
-    --primary: #3b82f6;
-    --secondary: #8b5cf6;
-    --accent: #06b6d4;
-    --shopgen-blue: #0061FF;
-    --bg-deep: #0f172a;
-    --text-main: #f8fafc;
-    --text-light: #94a3b8;
-    --card-bg: rgba(30, 41, 59, 0.7);
+    --primary: #3b82f6;      /* Le bleu principal */
+    --secondary: #8b5cf6;    /* Le violet */
+    --accent: #06b6d4;       /* Cyan pour les détails */
+    --shopgen-blue: #0061FF; /* Bleu spécial pour les boutons */
+    --bg-deep: #0f172a;      /* Fond sombre */
+    --text-main: #f8fafc;    /* Texte presque blanc */
+    --text-light: #94a3b8;   /* Texte gris */
+    --card-bg: rgba(30, 41, 59, 0.7); /* Fond un peu transparent pour les cartes */
+    
+    /* Mes polices */
     --font-head: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
 
-
-/* --- CONFIGURATION GÉNÉRALE --- */
+/* --- LE CORPS DE LA PAGE --- */
 body {
     margin: 0; padding: 0;
     font-family: var(--font-body);
     color: var(--text-main);
-    line-height: 1.6;
     background-color: var(--bg-deep);
-    /* Dégradé de fond complexe */
+    
+    /* J'ai mis deux cercles de couleur en fond avec un dégradé */
     background-image: 
         radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.25), transparent 25%),
         radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.25), transparent 25%);
-    background-attachment: fixed;
+    background-attachment: fixed; /* Pour que le fond ne bouge pas quand on scroll */
+    
+    /* Petite animation pour faire vivre le fond */
     animation: backgroundPulse 10s ease-in-out infinite alternate;
 }
 
-/* Animation douce du fond */
+/* L'animation qui fait un léger zoom sur le fond */
 @keyframes backgroundPulse {
     0% { background-size: 100% 100%; }
     100% { background-size: 120% 120%; }
 }
 
-/* Effet de grain sur le fond (bruit visuel) */
+/* Ça c'est pour ajouter un effet de grain par dessus (trouvé sur internet pour faire texture) */
 body::before {
     content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/rect%3E%3C/svg%3E");
     pointer-events: none; z-index: -1;
 }
 
-/* Styles des Titres */
-h1, h2, h3 { font-family: var(--font-head); margin-bottom: 1rem; letter-spacing: -0.5px; }
+/* Style des titres */
+h1, h2, h3 { font-family: var(--font-head); margin-bottom: 1rem; }
 
-/* Effet dégradé sur le texte des titres */
+/* Petit effet sympa : le texte des titres a un dégradé de couleur */
 h1, h2 span {
     background: linear-gradient(135deg, #ffffff 0%, var(--primary) 100%);
     -webkit-background-clip: text;
@@ -54,40 +61,41 @@ h1, h2 span {
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; } /* Pour centrer le contenu */
 
-/* --- BARRE DE NAVIGATION --- */
+/* --- MENU DE NAVIGATION --- */
 .navbar { 
     height: 70px; display: flex; align-items: center; 
-    position: sticky; top: 0; z-index: 1000;
-    background: rgba(15, 23, 42, 0.6); /* Fond flouté */
-    backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 1000; /* Le menu reste collé en haut */
+    background: rgba(15, 23, 42, 0.6); 
+    backdrop-filter: blur(12px); /* Effet de flou derrière le menu */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 .nav-links { display: flex; gap: 30px; align-items: center; font-weight: 500; }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); text-shadow: 0 0 15px rgba(59, 130, 246, 0.6); }
 
-/* --- HERO SECTION --- */
+/* --- PAGE D'ACCUEIL (HERO) --- */
 .hero { text-align: center; padding: 120px 20px; }
-.hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; }
-.hero p { font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 20px auto 40px; }
+.hero h1 { font-size: 3.5rem; font-weight: 800; }
+.hero p { color: var(--text-light); max-width: 600px; margin: 20px auto 40px; }
 .cta-group { display: flex; justify-content: center; gap: 20px; }
 
-/* --- BOUTONS --- */
-.btn { padding: 14px 30px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; transition: 0.3s; font-size: 1rem; }
+/* --- LES BOUTONS --- */
+.btn { padding: 14px 30px; border-radius: 50px; cursor: pointer; border: none; transition: 0.3s; font-size: 1rem; font-weight: 600; }
+
+/* Bouton avec dégradé */
 .btn-primary { 
     background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; 
     box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 30px rgba(139, 92, 246, 0.6); }
+.btn-primary:hover { transform: translateY(-3px); } /* Le bouton monte un peu au survol */
 
-/* Bouton spécifique formulaire */
+/* Bouton bleu simple pour le formulaire */
 .btn-shopgen {
     background-color: var(--shopgen-blue); 
     color: #ffffff;
     border-radius: 8px;
-    font-weight: 700;
     padding: 16px 32px;
     width: 100%;
     border: none;
@@ -96,27 +104,31 @@ ul { list-style: none; }
 }
 .btn-shopgen:hover { background-color: #0050d1; transform: translateY(-1px); }
 
-/* --- SECTIONS (Carrousel, Étapes, Équipe) --- */
+/* --- LES SECTIONS --- */
 .carousel-section, .steps-section, .team-section { padding: 80px 0; }
 
-/* Style du Carrousel */
+/* Le cadre du carrousel */
 .carousel-container { 
     max-width: 800px; margin: 0 auto; position: relative; 
     border-radius: 20px; overflow: hidden; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     aspect-ratio: 16/9; /* Garde le format rectangulaire */
     border: 1px solid rgba(255,255,255,0.1);
 }
 .carousel-slide { width: 100%; height: 100%; background-size: cover; background-position: center; }
+
+/* Flèches pour changer d'image */
 .carousel-controls { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); padding: 0 10px; pointer-events: none; }
-.nav-btn { pointer-events: auto; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; transition: 0.3s; }
+.nav-btn { pointer-events: auto; background: rgba(0,0,0,0.5); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; transition: 0.3s; }
 .nav-btn:hover { background: var(--primary); }
+
+/* Texte sur le carrousel */
 .carousel-caption { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); color: white; }
 
-/* --- GRILLES (Cartes) --- */
+/* --- GRILLES (POUR LES CARTES ET L'ÉQUIPE) --- */
 .cards-grid, .team-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive automatique */
+    /* Ça permet aux cartes de se ranger toutes seules selon la taille de l'écran */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px; margin-top: 50px; 
 }
 
@@ -128,19 +140,19 @@ ul { list-style: none; }
 }
 .card:hover, .team-card:hover { 
     transform: translateY(-5px); background: rgba(30, 41, 59, 0.9);
-    border-color: var(--primary); box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+    border-color: var(--primary); /* Bordure bleue au survol */
 }
 
+/* Cercles pour les numéros et avatars */
 .step-number { 
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white; width: 50px; height: 50px; border-radius: 12px; 
     display: flex; align-items: center; justify-content: center; 
-    margin: 0 auto 25px; font-weight: bold; font-size: 1.2rem;
+    margin: 0 auto 25px; font-weight: bold;
 }
+.avatar { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; border: 4px solid var(--bg-deep); }
 
-.avatar { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem; border: 4px solid var(--bg-deep); }
-
-/* --- FORMULAIRE --- */
+/* --- FORMULAIRE DE CONTACT --- */
 .form-box { 
     max-width: 600px; margin: 40px auto; padding: 40px; 
     background: var(--card-bg); backdrop-filter: blur(10px);
@@ -152,22 +164,23 @@ ul { list-style: none; }
     background: rgba(0,0,0,0.2); color: white; transition: 0.3s;
 }
 .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); background: rgba(0,0,0,0.4); }
-.success-banner { background-color: #10b981; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-weight: 600; }
+.success-banner { background-color: #10b981; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
 
-footer { text-align: center; padding: 40px; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-light); font-size: 0.9rem; }
+footer { text-align: center; padding: 40px; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-light); }
 
-/* --- RESPONSIVE (Mobile) --- */
+/* --- VERSION MOBILE --- */
 .burger-menu { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
 .burger-menu span { width: 30px; height: 3px; background: white; border-radius: 3px; }
 
+/* Quand l'écran est plus petit que 768px (Tablettes et Téléphones) */
 @media (max-width: 768px) {
-    .burger-menu { display: flex; } /* Affiche le burger sur mobile */
+    .burger-menu { display: flex; } /* J'affiche le burger */
     .nav-links { 
         position: absolute; top: 70px; right: -100%; flex-direction: column; 
         background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(15px);
         width: 250px; height: 100vh; padding-top: 50px; transition: 0.3s;
         border-left: 1px solid rgba(255,255,255,0.05);
     }
-    .nav-links.active { right: 0; } /* Fait glisser le menu quand actif */
+    .nav-links.active { right: 0; } /* Le menu glisse pour apparaître */
     .hero h1 { font-size: 2.2rem; }
 }
