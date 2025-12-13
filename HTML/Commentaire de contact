@@ -1,0 +1,15 @@
+Rôle de la page C'est la page fonctionnelle du site. Elle permet aux utilisateurs d'envoyer un message. J'ai voulu faire une interface simple et centrée.
+
+2. Structure HTML
+
+Formulaire (form-box) : J'ai regroupé tous les champs (Nom, Email, Message) dans une boîte avec un fond semi-transparent pour qu'elle ressorte bien sur le fond animé.
+
+Message de succès (caché) : J'ai ajouté une div avec l'id form-success et le style display: none. Elle est présente dans le code HTML mais invisible par défaut.
+
+3. Choix techniques (JavaScript)
+
+Gestion de l'événement submit : C'est la partie la plus importante. Quand l'utilisateur clique sur "Envoyer", j'utilise la commande e.preventDefault() en JavaScript.
+
+Pourquoi ? Par défaut, un formulaire recharge la page. Ici, je bloque ce rechargement pour créer une expérience plus fluide.
+
+Feedback utilisateur : Une fois le formulaire validé (simulé), je modifie le style du message de succès pour le passer en display: block (visible) et j'insère le nom de l'utilisateur dynamiquement dans le message de remerciement.
