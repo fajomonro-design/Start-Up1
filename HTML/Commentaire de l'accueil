@@ -1,0 +1,17 @@
+Rôle de la page La page Accueil.html est la vitrine du site ShopGen. Son but est d'accrocher le visiteur immédiatement avec un titre fort (Hero Section), de lui montrer ce que fait le produit via un carrousel d'images, et d'expliquer le fonctionnement en 3 étapes simples.
+
+2. Structure HTML J'ai divisé la page en 4 grandes parties pour que le code soit lisible :
+
+Navbar : Contient le logo et les liens. Sur mobile, elle utilise un menu "burger" géré en JavaScript.
+
+Header (Hero) : C'est la première chose qu'on voit. J'ai mis un bouton d'appel à l'action (cta-group) pour inciter l'utilisateur à cliquer.
+
+Section Carrousel : J'ai créé un bloc vide (div id="carousel-slide") qui reçoit l'image de fond via le JavaScript. C'était le point le plus technique de la page.
+
+Section Étapes : J'ai utilisé des cartes (card) pour expliquer le concept "Décrivez, Générez, Publiez".
+
+3. Choix techniques (CSS & JS)
+
+Le Carrousel : Je ne voulais pas charger toutes les images d'un coup en HTML. J'ai donc utilisé un tableau en JavaScript (slidesData) qui change l'image de fond et le texte dynamiquement quand on clique sur les flèches.
+
+Responsive : J'ai utilisé une grille CSS (cards-grid) pour les étapes. Sur PC, les 3 étapes sont alignées, mais sur mobile, elles passent les unes sous les autres automatiquement.
