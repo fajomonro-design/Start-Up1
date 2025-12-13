@@ -1,0 +1,15 @@
+Rôle de la page Cette page sert à rassurer l'utilisateur en montrant qu'il y a des humains derrière l'intelligence artificielle. Elle présente l'équipe fondatrice et les valeurs de ShopGen.
+
+2. Structure HTML
+
+Header simple : Un rappel de la mission de l'entreprise.
+
+Section Équipe (team-section) : J'ai créé des cartes spécifiques pour les membres. Chaque carte contient un avatar (fait en CSS avec des initiales), le nom, le poste et le rôle précis.
+
+Section Valeurs : J'ai réutilisé le style des cartes de la page d'accueil pour garder une cohérence visuelle (même design, même police).
+
+3. Choix techniques (CSS)
+
+Flexbox et Grid : J'ai beaucoup utilisé display: flex pour centrer les éléments (comme les avatars ou les textes). Pour la liste des membres et des valeurs, j'ai utilisé display: grid avec minmax(280px, 1fr). Cela permet aux cartes de s'adapter à la largeur de l'écran sans que j'aie besoin d'écrire beaucoup de "Media Queries".
+
+Design System : J'ai fait attention à réutiliser les variables de couleurs (comme var(--primary)) définies dans le fichier CSS pour que le bleu et le violet soient exactement les mêmes que sur l'accueil.
