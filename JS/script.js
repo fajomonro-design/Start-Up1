@@ -1,23 +1,23 @@
-// On attend que toute la page HTML soit chargée avant de lancer le script
+// J'attends que la page soit bien chargée avant de lancer le code
 document.addEventListener('DOMContentLoaded', function() {
     
-    // --- SÉLECTION DES ÉLÉMENTS HTML ---
+    // --- JE RÉCUPÈRE MES ÉLÉMENTS HTML ---
     var yearSpan = document.querySelector('#year');
     var burger = document.getElementById('burger-menu');
     var nav = document.getElementById('nav-links');
     var form = document.getElementById('contact-form');
     
-    // Éléments du Carrousel
+    // Les éléments pour le carrousel
     var slideContainer = document.getElementById('carousel-slide');
     var titleEl = document.getElementById('slide-title');
     var descEl = document.getElementById('slide-desc');
     var prevBtn = document.getElementById('prevBtn');
     var nextBtn = document.getElementById('nextBtn');
     
-    var currentIndex = 0; // Index de la diapositive actuelle
+    var currentIndex = 0; // Je commence à la première image (0)
     
-    // --- DONNÉES DU CARROUSEL ---
-    // Tableau contenant les infos de chaque slide (Titre, Description, Image)
+    // --- MES DONNÉES ---
+    // Un tableau avec toutes les infos de mes slides
     var slidesData = [
         {
             title: "Conception IA",
@@ -36,38 +36,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
-    // Mise à jour automatique de l'année dans le footer
+    // Je mets l'année automatiquement dans le footer
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // --- FONCTION : AFFICHER UNE SLIDE ---
+    // --- FONCTION POUR CHANGER L'IMAGE ---
     function afficherSlide(index) {
-        if (!slideContainer) return; // Sécurité si le carrousel n'existe pas sur la page
+        if (!slideContainer) return; // Si y'a pas de carrousel, on arrête
         
         var slide = slidesData[index];
-        // Change l'image de fond et le texte
+        // Je change l'image de fond et le texte
         slideContainer.style.backgroundImage = 'url(' + slide.image + ')';
         
         if (titleEl) titleEl.textContent = slide.title;
         if (descEl) descEl.textContent = slide.desc;
     }
 
-    // --- NAVIGATION CARROUSEL ---
+    // Fonction bouton "Suivant"
     function slideSuivante() {
-        currentIndex = (currentIndex + 1) % slidesData.length; // Boucle au début à la fin
+        // Le modulo % permet de revenir à 0 quand on arrive à la fin du tableau
+        currentIndex = (currentIndex + 1) % slidesData.length; 
         afficherSlide(currentIndex);
     }
 
+    // Fonction bouton "Précédent"
     function slidePrecedente() {
-        currentIndex = (currentIndex - 1 + slidesData.length) % slidesData.length; // Boucle à la fin si on recule au début
+        // Petit calcul pour éviter les nombres négatifs et boucler à la fin
+        currentIndex = (currentIndex - 1 + slidesData.length) % slidesData.length; 
         afficherSlide(currentIndex);
     }
 
-    // Active le carrousel uniquement si les boutons existent (Page Accueil)
+    // --- LANCE LE CARROUSEL ---
+    // Je vérifie si les boutons existent (donc si on est sur l'accueil)
     if (prevBtn && nextBtn) {
-        afficherSlide(currentIndex); // Affiche la première image au chargement
+        afficherSlide(currentIndex); // Affiche la première image
         
+        // Quand on clique sur les boutons
         nextBtn.addEventListener('click', function() {
             slideSuivante();
         });
@@ -76,33 +81,34 @@ document.addEventListener('DOMContentLoaded', function() {
             slidePrecedente();
         });
         
-        // Change d'image automatiquement toutes les 5 secondes
+        // Change d'image tout seul toutes les 5 secondes
         setInterval(function() {
             slideSuivante();
         }, 5000);
     }
 
-    // --- MENU BURGER (Mobile) ---
+    // --- MENU BURGER SUR MOBILE ---
     if (burger) {
         burger.addEventListener('click', function() {
-            nav.classList.toggle('active'); // Ajoute ou enlève la classe CSS pour afficher le menu
+            // J'ajoute ou j'enlève la classe 'active' pour montrer le menu
+            nav.classList.toggle('active'); 
         });
     }
 
-    // --- GESTION DU FORMULAIRE DE CONTACT ---
+    // --- FORMULAIRE DE CONTACT ---
     if (form) {
         form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Empêche le rechargement de la page
+            e.preventDefault(); // Ça empêche la page de se recharger
             
             var successDiv = document.getElementById('form-success');
             var nameInput = document.getElementById('name');
             var pseudoDisplay = document.getElementById('user-pseudo-display');
             
-            // Simulation d'envoi réussi
+            // Je fais semblant que le message est envoyé
             if (successDiv && nameInput) {
                 pseudoDisplay.textContent = nameInput.value;
-                successDiv.style.display = 'block'; // Affiche le message vert
-                form.reset(); // Vide les champs
+                successDiv.style.display = 'block'; // J'affiche le message de succès
+                form.reset(); // Je vide les champs
             }
         });
     }
